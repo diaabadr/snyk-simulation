@@ -1,0 +1,15 @@
+# Snyk policy file
+# https://docs.snyk.io/scan-using-snyk/policies/the-.snyk-file
+version: v1.25.0
+
+# Exclude directories from Snyk Code scanning
+exclude:
+  global:
+    - "obj/**"
+    - "bin/**"
+
+# NOTE: The ignore: section only works for Snyk Open Source (SCA),
+# NOT for Snyk Code (SAST). To ignore specific Snyk Code findings like
+# Log Injection, use one of these methods instead:
+#   1. Snyk Web UI > Consistent Ignores (recommended)
+#   2. snyk code test --severity-threshold=high (in CI/CD)
