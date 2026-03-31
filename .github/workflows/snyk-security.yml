@@ -30,6 +30,7 @@ jobs:
       - name: Run Snyk Code test
         run: snyk code test --severity-threshold=high
 
+
   snyk-open-source:
     name: Snyk Open Source (SCA)
     runs-on: ubuntu-latest
