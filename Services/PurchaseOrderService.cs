@@ -27,6 +27,7 @@ public class PurchaseOrderService
 
             return Results.Ok(new { Status = "Success", Action = action });
         }
+        
         catch (Exception ex)
         {
             _logger.LogError("PO {Action} failed | Store: {StoreId}, VendorPo: {VendorPo}, Vendor: {VendorId}, User: {UserId}, Error: {Error}",
