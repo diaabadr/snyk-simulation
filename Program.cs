@@ -18,4 +18,9 @@ app.MapPost("/api/po/{action}", (string action, PurchaseOrderRequest request, Pu
     return poService.ProcessPurchaseOrder(action, request);
 });
 
+app.MapGet("/api/vendor/{vendorId}/validate", (string vendorId, string userId, PurchaseOrderService poService) =>
+{
+    return poService.ValidateVendor(vendorId, userId);
+});
+
 app.Run();
