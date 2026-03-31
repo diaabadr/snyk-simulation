@@ -23,4 +23,9 @@ app.MapGet("/api/vendor/{vendorId}/validate", (string vendorId, string userId, P
     return poService.ValidateVendor(vendorId, userId);
 });
 
+app.MapDelete("/api/po/{orderId}", (string orderId, string userId, string reason, PurchaseOrderService poService) =>
+{
+    return poService.CancelPurchaseOrder(orderId, userId, reason);
+});
+
 app.Run();

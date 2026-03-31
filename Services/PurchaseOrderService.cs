@@ -55,4 +55,15 @@ public class PurchaseOrderService
 
         return Results.Ok(new { VendorId = vendorId, Valid = true });
     }
+
+    public IResult CancelPurchaseOrder(string orderId, string userId, string reason)
+    {
+        _logger.LogInformation("PO cancellation requested | OrderId: {OrderId}, User: {UserId}, Reason: {Reason}",
+            orderId, userId, reason);
+
+        _logger.LogWarning("PO {OrderId} cancelled by {UserId} | Reason: {Reason}",
+            orderId, userId, reason);
+
+        return Results.Ok(new { OrderId = orderId, Status = "Cancelled" });
+    }
 }
